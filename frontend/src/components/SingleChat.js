@@ -9,13 +9,12 @@ import axios from "axios";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import ProfileModal from "./miscellaneous/ProfileModal";
 import ScrollableChat from "./ScrollableChat";
-import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
 
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "http://localhost:5000"; 
+const ENDPOINT = "https://chatter-vvzj.vercel.app"; 
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -51,7 +50,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/message/${selectedChat._id}`,
+        `https://chatter-vvzj.vercel.app/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -82,7 +81,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/api/message",
+          "https://chatter-vvzj.vercel.app/api/message",
           {
             content: newMessage,
             chatId: selectedChat,
@@ -230,12 +229,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             >
               {istyping ? (
                 <div>
-                  <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
-                  />
+                  Typing...
                 </div>
               ) : (
                 <></>

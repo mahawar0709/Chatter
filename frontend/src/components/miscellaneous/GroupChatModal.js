@@ -58,7 +58,7 @@ import {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+        const { data } = await axios.get(`https://chatter-vvzj.vercel.app/api/user?search=${search}`, config);
         console.log(data);
         setLoading(false);
         setSearchResult(data);
@@ -97,7 +97,7 @@ import {
           },
         };
         const { data } = await axios.post(
-          `http://localhost:5000/api/chat/group`,
+          `https://chatter-vvzj.vercel.app/api/chat/group`,
           {
             name: groupChatName,
             users: JSON.stringify(selectedUsers.map((u) => u._id)),
