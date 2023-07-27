@@ -35,7 +35,7 @@ const io = require("socket.io")(server, {
     pingTimeout: 60000,
     cors: {
       origin: "https://chatter-vvzj.vercel.app",
-      // credentials: true,
+      credentials: true,
     },
   });
 

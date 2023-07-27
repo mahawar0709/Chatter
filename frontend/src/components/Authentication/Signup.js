@@ -49,6 +49,7 @@ const Signup = () => {
         headers: {
           "Content-type": "application/json",
         },
+        withCredentials:true
       };
       const { data } = await axios.post("https://chatter-vvzj.vercel.app/api/user",{name,email,password,pic},config);
       // console.log(data);

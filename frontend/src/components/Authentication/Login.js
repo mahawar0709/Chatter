@@ -38,6 +38,7 @@ const submitHandler = async () => {
       headers: {
         "Content-type": "application/json",
       },
+      withCredentials:true
     };
 
     const res  = await axios.post("https://chatter-vvzj.vercel.app/api/user/login",{ email, password },config);
