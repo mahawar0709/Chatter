@@ -51,7 +51,7 @@ const Signup = () => {
         },
         withCredentials:true
       };
-      const { data } = await axios.post("https://chatter-vvzj.vercel.app/api/user",{name,email,password,pic},config);
+      const { data } = await axios.post("http://localhost:5000/api/user",{name,email,password,pic},config);
       // console.log(data);
       toast({
         title: "Registration Successful",
