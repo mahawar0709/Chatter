@@ -41,7 +41,7 @@ const submitHandler = async () => {
       withCredentials:true
     };
 
-    const res  = await axios.post("http://localhost:5000/api/user/login",{ email, password },config);
+    const res  = await axios.post("https://chatter-qo6j.vercel.app/api/user/login",{ email, password },config);
 
     toast({
       title: "Login Successful",

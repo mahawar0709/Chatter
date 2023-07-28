@@ -10,7 +10,7 @@ const notFound = require("./middleware/errorMiddleware.js");
 const errorHandler = require("./middleware/errorMiddleware.js");
 const app = express();
 const corsOptions ={
-  origin:'http://localhost:3000', 
+  origin:'https://chatter-mocha-theta.vercel.app/', 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
